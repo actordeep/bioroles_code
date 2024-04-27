@@ -93,6 +93,7 @@ do {
 						continue;
 					}
 					
+					
 					$DataRec=''; //收到数据
 					if(isset($data["id{$address}_{$port}"]))
 						$DataRec=$data["id{$address}_{$port}"];

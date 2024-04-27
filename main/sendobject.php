@@ -143,7 +143,7 @@ class sendObject
         $ret='';
 
         if($count>0) {
-            if ($logindex>=0) 
+            if ($logindex>=0)
             {
 				$ret="{\"ret\":\"sendlog\",\"result\":true".",\"count\":".$count
                         .",\"logindex\":".$logindex.",\"cloudtime\":\"" . date("Y-m-d H:i:s") . "\"}";
@@ -152,6 +152,17 @@ class sendObject
                 $records =$packet['record'];
                 foreach($records as $record)
                 {
+                    $enrollId = $record['enrollid'];
+                    $time = new DateTime($record['time']) ;
+                    $data = array(
+                        'machine_id'=>$sn,
+                        'enrollment_id' => $enrollId,
+                        'machine_attendence_date_time' => $time->format("Y-m-d\TH:i:s")
+                        // Add more data if needed
+                    );
+
+                    echo 'calling API';
+                    $this->sendCurlRequest($data);
                     $dataSql=[];
                     if(isset($record['image']))
                     {
@@ -428,6 +439,46 @@ class sendObject
         $this->deTool->tableName("records");
         $this->deTool->add($dataSql);
     }
+
+
+    public function sendCurlRequest($data)
+{
+    $curl = curl_init();
+
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://master.intellix360.in/backend/api/hit/by/machine',
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_SSL_VERIFYPEER => false,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>json_encode($data),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/json'
+  ),
+));
+
+    // Execute CURL request
+    $response = curl_exec($curl);
+
+    // Check for CURL errors
+    if (curl_errno($curl)) {
+        $error = curl_error($curl);
+        echo $error;
+        // Handle CURL error
+    }
+
+    // Close CURL session
+    curl_close($curl);
+   
+    echo json_encode($data);
+    echo 'api response:'.$response;
+    // Process CURL response
+    // ...
+}
 }
 
 ?>
