@@ -108,13 +108,13 @@
 	        	   <div class="form-group" >
                       
                          <h5 class="col-xs-9">BackupNum 1-9 is fingerprint,20-27 is face,30-37 is palm</h4>
-                    </div> 
+                    </div>
 	        	  <div class="form-group" >
                         <label class="control-label col-xs-3">EnrollId</label>
                         <div class="col-xs-9">
                         	<input class="form-control" disabled="disabled"  name="enrollId1" id="enrollId1">
                         </div>
-                    </div> 
+                    </div>
                       <div class="form-group">
                         <label class="control-label col-xs-3">BackupNum</label>
                         <div class="col-xs-9">
@@ -217,13 +217,13 @@
                         <div class="col-xs-9">
                         	<input name="starttime" class="form-control date" >
                         </div>
-                    </div> 
+                    </div>
                      <div class="form-group">
                         <label class="control-label col-xs-3">endtime</label>
                         <div class="col-xs-9">
                         	<input name="endtime" class="form-control date">
                         </div>
-                    </div> 
+                    </div>
 				 
 				</form>
 	      </div>
@@ -314,32 +314,32 @@
                         <div class="col-xs-9">
                         	<input class="form-control" name="group1">
                         </div>
-                    </div> 
+                    </div>
                      <div class="form-group">
                         <label class="control-label col-xs-3">group2</label>
                         <div class="col-xs-9">
                         	<input class="form-control" name="group2">
                         </div>
-                    </div>  
+                    </div>
                    <div class="form-group">
                         <label class="control-label col-xs-3">group3</label>
                         <div class="col-xs-9">
                         	<input class="form-control" name="group3">
                         </div>
-                    </div>  
+                    </div>
                     
 				   <div class="form-group">
                         <label class="control-label col-xs-3">group4</label>
                         <div class="col-xs-9">
                         	<input class="form-control" name="group4">
                         </div>
-                    </div> 
+                    </div>
 				  <div class="form-group">
                         <label class="control-label col-xs-3">group5</label>
                         <div class="col-xs-9">
                         	<input class="form-control" name="group5">
                         </div>
-                    </div> 
+                    </div>
 				 
 				</form>
 	      </div>

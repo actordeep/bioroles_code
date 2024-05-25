@@ -490,7 +490,7 @@
 				type:"POST",
 				data:$("#empAddModal form").serialize(),
 				success:function(result){
-					 	if(result.code == 100){ 
+					 	if(result.code == 100){
 						//alert(result.msg);
 						//员工保存成功
 						//1.关闭模态框

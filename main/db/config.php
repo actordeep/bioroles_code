@@ -1,5 +1,5 @@
 <?php
-define('SERVER_IP', '192.168.6.78');
+define('SERVER_IP', '192.168.1.13');
 define('SERVER_PORT', '7788');
 
 define('MAX_THREADS', 32);
